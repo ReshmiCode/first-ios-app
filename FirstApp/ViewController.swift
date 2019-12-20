@@ -23,7 +23,9 @@ class ViewController: UIViewController {
         textLabel.text = textField.text
         textField.text = ""
         view.endEditing(true)
-        //textLabel.text = "Goodbye 👋"
+        if textField.text!.isEmpty {
+            textLabel.text = "Goodbye 👋"
+        }
     }
     
     @IBAction func didTapViewButton(_ sender: Any) {
