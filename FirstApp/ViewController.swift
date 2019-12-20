@@ -20,12 +20,13 @@ class ViewController: UIViewController {
     
     
     @IBAction func didTapStringButton(_ sender: Any) {
-        textLabel.text = textField.text
+        if textField.text?.isEmpty ?? true {
+            textLabel.text = "Goodbye 👋"
+        } else {
+            textLabel.text = textField.text
+        }
         textField.text = ""
         view.endEditing(true)
-        if textField.text!.isEmpty {
-            textLabel.text = "Goodbye 👋"
-        }
     }
     
     @IBAction func didTapViewButton(_ sender: Any) {
